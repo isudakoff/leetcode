@@ -1,0 +1,21 @@
+version: '3.3'
+
+services:
+
+  go:
+    build:
+      context: .
+      dockerfile: ./docker/golang/Dockerfile
+    entrypoint: ''
+    command: [ "tail", "-f", "/dev/null" ]
+    volumes:
+      - ./:/code:delegated
+
+  php:
+    build:
+      context: .
+      dockerfile: ./docker/php/Dockerfile
+    entrypoint: ''
+    command: [ "tail", "-f", "/dev/null" ]
+    volumes:
+      - ./:/code:delegated
